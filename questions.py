@@ -28,7 +28,8 @@ correct_answers_index = [1, 2, 0, 3, 1]
 puntaje=0
 
 # Se seleccionan 3 preguntas aleatorias sin acceder por índice
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
+# Ahora además, las preguntas selecionadas no se repiten
+questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3)
 
 # El usuario deberá contestar 3 preguntas
 for question, answer_options, correct_answer in questions_to_ask:
